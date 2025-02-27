@@ -1,4 +1,5 @@
-
+# rama 3
+# test_calculadora.py
 # @uthor Luis Fernando José Miguel   ljosem@miumg.edu.gt
 
 # Importamos el módulo unittest para crear y ejecutar las pruebas
@@ -34,6 +35,12 @@ class TestCalculadora(unittest.TestCase):
         self.assertEqual(sumar(0, 0), 0)  # 0 + 0 = 0
         self.assertEqual(sumar(5, 0), 5)  # 5 + 0 = 5
         self.assertEqual(sumar(0, -3), -3)  # 0 + (-3) = -3
+
+    def test_suma_decimales(self):
+        """Prueba la suma de números decimales."""
+        self.assertAlmostEqual(sumar(2.5, 3.1), 5.6)  # 2.5 + 3.1 = 5.6
+        self.assertAlmostEqual(sumar(-1.2, 0.2), -1.0)  # -1.2 + 0.2 = -1.0
+        self.assertAlmostEqual(sumar(0.1, 0.2), 0.3, places=1)  # 0.1 + 0.2 ≈ 0.3 (problemas de precisión flotante)
 
 # Garantiza que si ejecutamos este archivo directamente, se ejecutarán los tests.
 if __name__ == "__main__":
