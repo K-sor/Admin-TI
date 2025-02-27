@@ -1,6 +1,5 @@
-# test_calculadora.py
-#@uthor Luis Fernando José Miguel   ljosem@miumg.edu.gt
 
+# @uthor Luis Fernando José Miguel   ljosem@miumg.edu.gt
 
 # Importamos el módulo unittest para crear y ejecutar las pruebas
 import unittest
@@ -29,6 +28,12 @@ class TestCalculadora(unittest.TestCase):
         """Prueba la suma de un número positivo y uno negativo."""
         resultado = sumar(-1, 1)  # Llamamos a la función sumar con -1 y 1
         self.assertEqual(resultado, 0)  # Verificamos que el resultado sea 0
+
+    def test_suma_con_cero(self):
+        """Prueba la suma de números con cero."""
+        self.assertEqual(sumar(0, 0), 0)  # 0 + 0 = 0
+        self.assertEqual(sumar(5, 0), 5)  # 5 + 0 = 5
+        self.assertEqual(sumar(0, -3), -3)  # 0 + (-3) = -3
 
 # Garantiza que si ejecutamos este archivo directamente, se ejecutarán los tests.
 if __name__ == "__main__":
